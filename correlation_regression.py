@@ -8,7 +8,7 @@ def main():
     Main function, intendet to be the main algorithm, and the
     one function to be executed when the script is runned
     """
-    n = float(input('n:\n'))
+    n = float(input('n: '))
     value_pairs = get_value_pairs(n)
 
     x_sum = get_x_sum(value_pairs)
@@ -23,7 +23,7 @@ def main():
 
     linear_regression_line = compute_linear_regression_line(a0, a1)
 
-    print(f'x = {x_sum}',
+    print(f'\nx = {x_sum}',
           f'y = {y_sum}',
           f'x per y = {x_per_y_sum}',
           f'x pow 2 = {x_pow_sum}',
@@ -39,8 +39,8 @@ def get_value_pairs(n):
     """
     value_pairs = []
     for i in range(int(n)):
-        x = float(input(f'x #{i}:'))
-        y = float(input(f'y #{i}'))
+        x = float(input(f'\nx #{i}: '))
+        y = float(input(f'y #{i}: '))
         value_pairs.append([x, y])
     return value_pairs 
 
@@ -99,8 +99,8 @@ def compute_a1(n, x_per_y_sum, x_sum, y_sum, x_pow_sum):
     Computes and returns the a1.
     """
     return (
-            (n * x_per_y_sum - x_sum * y_sum) /
-            (n * x_pow_sum - x_sum**2))
+            ((n * x_per_y_sum) - (x_sum * y_sum)) /
+            ((n * x_pow_sum) - (x_sum**2)))
 
 
 def compute_linear_regression_line(a0, a1):
