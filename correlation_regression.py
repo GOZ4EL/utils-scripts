@@ -15,6 +15,7 @@ def main():
     y_sum = get_y_sum(value_pairs)
     x_per_y_sum = get_x_per_y_sum(value_pairs) 
     x_pow_sum = get_x_pow_sum(value_pairs)
+    y_pow_sum = get_y_pow_sum(value_pairs)
 
     a0 = compute_a0(y_sum=y_sum, x_pow_sum=x_pow_sum, 
                     x_sum=x_sum, x_per_y_sum=x_per_y_sum, n=n)
@@ -27,6 +28,7 @@ def main():
           f'y = {y_sum}',
           f'x per y = {x_per_y_sum}',
           f'x pow 2 = {x_pow_sum}',
+          f'y pow 2 = {y_pow_sum}',
           f'a0 = {a0}',
           f'a1 = {a1}',
           f'y = {linear_regression_line}',
@@ -82,6 +84,16 @@ def get_x_pow_sum(value_pairs):
     result = 0
     for pair in value_pairs:
         result += pair[0]**2
+    return result
+
+
+def get_y_pow_sum(value_pairs):
+    """
+    Computes and returns the sum of all the y raised to power 2.
+    """
+    result = 0
+    for pair in value_pairs:
+        result += pair[1]**2
     return result
 
 
